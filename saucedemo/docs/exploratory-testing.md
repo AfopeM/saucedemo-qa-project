@@ -1,8 +1,19 @@
-# Exploratory Testing Document - ([Saucedemo](https://www.saucedemo.com/))
+# 🧪 Exploratory Testing Document
 
-I will focus exclusively on **standard_user** and **problem_user** for the **Inventory** feature, including **initial observations**, and subsequently for **test cases**, **execution logs**, and **documentation**.
+**Application:** [Saucedemo](https://www.saucedemo.com/)  
+**Focus:** `standard_user` and `problem_user`
 
----
+## 📌 Summary
+
+This document captures exploratory testing observations for the Saucedemo application, focusing on the Login, Inventory, Cart, Checkout features across `standard_user` and `problem_user` accounts.
+
+## 📋 Table of Contents
+
+1. [Application Overview](#1-application-overview)
+2. [Available Test Users](#2-available-test-users)
+3. [Application Map](#3-application-map)
+4. [Feature Inventory](#4-feature-inventory)
+5. [Initial Observations](#5-initial-observations)
 
 ## 1. Application Overview
 
@@ -17,167 +28,183 @@ Sauce Demo is a sample e-commerce application created for practicing Quality Ass
 
 ### 1.3 High-Level Functionality
 
-- **Login/Logout:** User is granted access to certain browse invenrtory, add to cart, and complete checkout by login
-- **Browse Inventory:** System displays all inventory items by name (ascending)
-- **Sort Item:** Items can be arranged by name and price (descending/ascending)
-- **Dedicated Item Page:** Displays a detailed description of item, along with name, image, add/remove button, and price
-- **Add/Remove Items from Cart:** User can add/remove item(s) from cart
-- **Complete Checkout Process:** User can checkout cart, coomplete user form, verify purchase, and complete checkout
+| Feature                 | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| **Login/Logout**        | User authentication to access inventory, cart, and checkout                    |
+| **Browse Inventory**    | System displays all inventory items by name (ascending order)                  |
+| **Sort Items**          | Arrange items by name and price (ascending/descending)                         |
+| **Dedicated Item Page** | Detailed view with description, name, image, add/remove button, and price      |
+| **Cart Management**     | Add/remove items from shopping cart                                            |
+| **Checkout Process**    | Complete purchase flow including user form, verification, and order completion |
 
 ### 1.4 Assumptions / Notes
 
-- Simulates difference test users: **locked_out_user** is unable to login
-- There **cannot be 2+** of a sigular item in cart at the same time.
-
----
+- **Cannot add 2+ of the same item** to cart
 
 ## 2. Available Test Users
 
-| Username                | Password     | Behavior / Notes                                                            |
-| ----------------------- | ------------ | --------------------------------------------------------------------------- |
-| standard_user           | secret_sauce | All pages, buttons, and flows function normally                             |
-| locked_out_user         | secret_sauce | Login always fails                                                          |
-| problem_user            | secret_sauce | Broken images, incorrect item info, and dysfunctional Add to Cart behaviour |
-| performance_glitch_user | secret_sauce | Slow page load (> 3 seconds) and delayed button response                    |
-| error_user              | secret_sauce | Error pop up during sorting                                                 |
-| visual_user             | secret_sauce | Oversized images, font inconsistencies, and misaligned elements             |
-
----
+| Username        | Password       | Behavior / Notes                                              |
+| --------------- | -------------- | ------------------------------------------------------------- |
+| `standard_user` | `secret_sauce` | All pages, buttons, and flows function normally               |
+| `problem_user`  | `secret_sauce` | Broken images, incorrect item info, dysfunctional Add to Cart |
 
 ## 3. Application Map
 
-### Login Page (`/`)
+```
+Login Page (/)
+│
+├─► Inventory Page (/inventory.html)
+│   │
+│   ├─► Dedicated Item Page (/inventory-item.html?id=[item_id])
+│   │   └─► Back to Inventory or Cart
+│   │
+│   └─► Cart Page (/cart.html) (Available on all logged-in pages)
+│       │
+│       ├─► Continue Shopping → Inventory
+│       │
+│       └─► Checkout Step One (/checkout-step-one.html)
+│           │
+│           └─► Checkout Step Two (/checkout-step-two.html)
+│               │
+│               └─► Checkout Complete (/checkout-complete.html)
+│                   └─► Back Home → Inventory
+│
+└─► Side Menu (Available on all logged-in pages)
+    ├─► All Items → Inventory
+    ├─► About → External (https://saucelabs.com/)
+    ├─► Logout → Login Page
+    └─► Reset App State
+```
 
-- Inventory Page (`/inventory.html`) on successful login
-- Error Message (invalid credentials)
+### 3.1 Navigation Flow Details
 
-### Inventory Page (`/inventory.html`)
-
-- Dedicated Item Page (`/inventory-item.html?id=[item_id_here]`)
-- Cart Page(`/cart.html`)
-
-### Dedicated Item Page (`/inventory-item.html?id=[item_id_here]`)
-
-- Inventory Page (`/inventory.html`)
-- Cart Page (`/cart.html`)
-
-### Cart Page (`/cart.html`)
-
-- Inventory Page (`/inventory.html`)
-- Checkout Step One Page (`/checkout-step-one.html`)
-
-### Checkout Step One Page (`/checkout-step-one.html`)
-
-- Cart Page (`/cart.html`)
-- Checkout Step One Page(`https://www.saucedemo.com/checkout-step-two.html`)
-
-### Checkout Step Two Page (`/checkout-step-one.html`)
-
-- Cart Page (`/cart.html`)
-- Inventory Page (`/inventory.html`)
-- Checkout Complete Page(`https://www.saucedemo.com/checkout-complete.html`)
-
-### Checkout Complete Page (`/checkout-step-one.html`)
-
-- Cart Page (`/cart.html`)
-- Inventory Page (`/inventory.html`)
-
-### Side Menu
-
-- External About Page (`https://saucelabs.com/`)
-- Login Page (`\`) on successful logout
-- Inventory Page (`/inventory.html`)
-
----
+| Current Page          | Navigation Options                                                      |
+| --------------------- | ----------------------------------------------------------------------- |
+| **Login Page**        | → Inventory (on success)<br>→ Error Message (on failure)                |
+| **Inventory Page**    | → Dedicated Item<br>→ Cart Page                                         |
+| **Dedicated Item**    | → Inventory<br>→ Cart Page                                              |
+| **Cart Page**         | → Inventory<br>→ Checkout Step One                                      |
+| **Checkout Step One** | → Cart (Cancel)<br>→ Checkout Step Two (Continue)                       |
+| **Checkout Step Two** | → Cart (Cancel)<br>→ Inventory (Cancel)<br>→ Checkout Complete (Finish) |
+| **Checkout Complete** | → Inventory (Back Home)<br>→ Cart Page                                  |
 
 ## 4. Feature Inventory
 
 ### 4.1 Global Features (Available on All Logged-In Pages)
 
-**Side Menu**
+#### Side Menu
 
-- _All Items (Menu Option)_: Navigates to the Inventory page
-- _About (Menu Option)_: Opens an external site
-- _Logout (Menu Option)_: Logs the user out and returns to the Login page
-- _Reset App State (Menu Option)_: Clears the cart and resets application state
+| Feature         | Type        | Function                         |
+| --------------- | ----------- | -------------------------------- |
+| All Items       | Menu Option | Navigate to Inventory page       |
+| About           | Menu Option | Open external site (Sauce Labs)  |
+| Logout          | Menu Option | Log out and return to Login page |
+| Reset App State | Menu Option | Clear cart and reset application |
 
-**Cart Icon**
+#### Cart Icon
 
-- _Cart Icon (Button)_: Navigates to the Cart page
-- _Cart Badge (Indicator)_: Displays the current number of items in the cart
+| Feature    | Type      | Function                           |
+| ---------- | --------- | ---------------------------------- |
+| Cart Icon  | Button    | Navigate to Cart page              |
+| Cart Badge | Indicator | Display current item count in cart |
 
-**Footer**
+#### Footer
 
-- _Social Media Icons (External Links)_: Opens Twitter, Facebook, and LinkedIn in a new tab
-
----
+| Feature            | Type           | Function                                    |
+| ------------------ | -------------- | ------------------------------------------- |
+| Social Media Icons | External Links | Open Twitter, Facebook, LinkedIn in new tab |
 
 ### 4.2 Page-Specific Features
 
-**Login Page**
+#### Login Page
 
-- _Login Button (Button)_: Authenticates the user with the provided credentials
-- _Username Field (Text Input)_: Accepts username input
-- _Password Field (Password Input)_: Accepts password input (masked)
-- _Error Message (Alert / Message)_: Displays an error when authentication fails
+| Feature        | Type           | Function                       |
+| -------------- | -------------- | ------------------------------ |
+| Username Field | Text Input     | Accept username                |
+| Password Field | Password Input | Accept password (masked)       |
+| Login Button   | Button         | Authenticate user              |
+| Error Message  | Alert          | Display authentication failure |
 
-**Inventory Page**
+#### Inventory Page
 
-- _Add to Cart Button (Button)_: Adds the selected item to the cart
-- _Remove Button (Button)_: Removes the selected item from the cart
-- _Sort Dropdown (Dropdown Menu)_: Sorts products by name or price (A–Z, Z–A, low–high, high–low)
-- _Product Item Link (Link)_: Clicking the product image or title navigates to the Item Details page
+| Feature            | Type     | Function                                          |
+| ------------------ | -------- | ------------------------------------------------- |
+| Product Item Link  | Link     | Navigate to Item Details (via image/title)        |
+| Add to Cart Button | Button   | Add item to cart                                  |
+| Remove Button      | Button   | Remove item from cart                             |
+| Sort Dropdown      | Dropdown | Sort by name/price (A–Z, Z–A, Low–High, High–Low) |
 
-**Product Details Page**
+#### Product Details Page
 
-- _Back to Products Link (Link)_: Navigates back to the Inventory page
-- _Add to Cart Button (Button)_: Adds the selected item to the cart
-- _Remove Button (Button)_: Removes the selected item from the cart
+| Feature               | Type   | Function                 |
+| --------------------- | ------ | ------------------------ |
+| Back to Products Link | Link   | Return to Inventory page |
+| Add to Cart Button    | Button | Add item to cart         |
+| Remove Button         | Button | Remove item from cart    |
 
-**Cart Page**
+#### Cart Page
 
-- _Remove Button (Button)_: Removes the selected item from the cart
-- _Continue Shopping Button (Button)_: Returns the user to the Inventory page
-- _Checkout Button (Button)_: Proceeds to Checkout Step One
-- _Product Item Link (Link)_: Clicking the product image or title navigates to the Item Details page
+| Feature                  | Type   | Function                                   |
+| ------------------------ | ------ | ------------------------------------------ |
+| Product Item Link        | Link   | Navigate to Item Details (via image/title) |
+| Remove Button            | Button | Remove item from cart                      |
+| Continue Shopping Button | Button | Return to Inventory page                   |
+| Checkout Button          | Button | Proceed to Checkout Step One               |
 
-**Checkout Step One Page**
+#### Checkout Step One
 
-- _First Name Field (Text Input)_: Accepts first name
-- _Last Name Field (Text Input)_: Accepts last name
-- _Zip / Postal Code Field (Text Input)_: Accepts zip/postal code
-- _Cancel Button (Button)_: Returns the user to the Cart page
-- _Continue Button (Button)_: Proceeds to Checkout Step Two
-- _Error Message (Alert / Message)_: Displays an error when form submission fails
+| Feature               | Type       | Function                       |
+| --------------------- | ---------- | ------------------------------ |
+| First Name Field      | Text Input | Accept first name              |
+| Last Name Field       | Text Input | Accept last name               |
+| Zip/Postal Code Field | Text Input | Accept zip/postal code         |
+| Cancel Button         | Button     | Return to Cart page            |
+| Continue Button       | Button     | Proceed to Checkout Step Two   |
+| Error Message         | Alert      | Display form validation errors |
 
-**Checkout Step Two Page**
+#### Checkout Step Two
 
-- _Total Price (Dynamic Text)_: Displays the subtotal, tax, and final total
-- _Product Item Link (Link)_: Clicking the product image or title navigates to the Product Details page
-- _Cancel Button (Button)_: Returns the user to the Inventory page
-- _Finish Button (Button)_: Completes the checkout process and navigates to the Checkout Complete page
+| Feature           | Type         | Function                                   |
+| ----------------- | ------------ | ------------------------------------------ |
+| Product Item Link | Link         | Navigate to Item Details (via image/title) |
+| Total Price       | Dynamic Text | Display subtotal, tax, and final total     |
+| Cancel Button     | Button       | Return to Inventory page                   |
+| Finish Button     | Button       | Complete checkout → Checkout Complete      |
 
-**Checkout Complete Page**
+#### Checkout Complete
 
-- _Success Message (Alert / Message)_: Displays a confirmation message when checkout is completed successfully
-- _Back Home Button (Button)_: Returns the user to the Inventory page
-
----
+| Feature          | Type   | Function                   |
+| ---------------- | ------ | -------------------------- |
+| Success Message  | Alert  | Display order confirmation |
+| Back Home Button | Button | Return to Inventory page   |
 
 ## 5. Initial Observations
 
 ### 5.1 Functional Observations
 
-- Unable to add more than one of the same item to the cart (**standard_user** and **problem_user**)
-- Sorting items function does not work (**problem_user**)
-- All item images on the Inventory page were incorrect (**problem_user**)
-- Some items on the Inventory page have a dysfunctional Remove button (**problem_user**)
-- A few item titles and descriptions were incorrect (**problem_user**)
-- Footer elements are not centered (**problem_user**)
-- Last Name field on Checkout Step Two page clears unexpectedly (**problem_user**)
+#### `standard_user` Behavior
 
-### 5.2 Edge Cases Noticed
+- All features work as expected
+- Cannot add multiple quantities of same item
 
-- User can start the checkout process with an empty cart (**problem_user**)
-- Zip/Postal Code field on Checkout Step One accepts any characters instead of enforcing a valid format (**standard_user** and **problem_user**)
-- Sorted items revert to the default ordering after a page refresh (**standard_user**)
+#### `problem_user` Issues
+
+| Issue                     | Severity  | Description                                              |
+| ------------------------- | --------- | -------------------------------------------------------- |
+| **Sorting Dysfunction**   | 🔴 High   | Sort dropdown does not function                          |
+| **Image Display**         | 🔴 High   | All Inventory page images are incorrect                  |
+| **Remove Button Failure** | 🔴 High   | Some items have non-functional Remove buttons            |
+| **Content Errors**        | 🟡 Medium | Incorrect item titles and descriptions                   |
+| **Layout Issues**         | 🟢 Low    | Footer elements not centered                             |
+| **Form Field Bug**        | 🟡 Medium | Last Name field clears unexpectedly on Checkout Step Two |
+
+### 5.2 Edge Cases Noticed (System Vulnerabilities & Unexpected Behaviors)
+
+1. **Empty Cart Checkout** (`problem_user`)  
+   User can proceed to checkout with an empty cart
+
+2. **Input Validation Missing** (`standard_user` & `problem_user`)  
+   Zip/Postal Code field accepts any characters instead of enforcing valid format
+
+3. **State Persistence** (`standard_user`)  
+   Sorted items revert to default ordering after page refresh
