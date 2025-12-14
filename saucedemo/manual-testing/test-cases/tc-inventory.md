@@ -2,188 +2,150 @@
 
 - **Feature**: Inventory Exploration
 - **Date Created**: 2025-12-13
+- **Last Updated :** 2025-12-14
 - **Author**: Afope
 
-## Overview
+## 📋 Test Case Summary
 
-This document defines the inventory functionality in Sauce Demo, focusing on item display, item sorting, and cart interactions. Ensuring the user can reliably view inventory items, sort item, sorted items presist after page refresh, and add/remove items from the cart.
-
-- **Total Test Cases**: 5
-- **Coverage**: Inventory displayed correctly, sorting inventory items, sorting persists after page refresh, add item to cart, remove item from cart
-
----
+| Test ID          | Test Case Name                              | Priority  | Status     |
+| ---------------- | ------------------------------------------- | --------- | ---------- |
+| TC-INVENTORY-001 | Inventory Items Display Correct Details     | 🔴 High   | ⬜ Not Run |
+| TC-INVENTORY-002 | Successfully Sort Products by Name (Z → A)  | 🟡 Medium | ⬜ Not Run |
+| TC-INVENTORY-003 | Item Sort Order Persists After Page Refresh | 🟡 Medium | ⬜ Not Run |
+| TC-INVENTORY-004 | Add Item to Cart From Inventory Page        | 🔴 High   | ⬜ Not Run |
+| TC-INVENTORY-005 | Remove Item From Cart on Inventory Page     | 🔴 High   | ⬜ Not Run |
 
 ## TC-INVENTORY-001: Inventory Items Display Correct Details
 
-**Priority:** High
+- **Priority** 🔴 High
+- **Test Type** Positive
 
-**Preconditions:**
+### Preconditions
 
-- User is **logged in** with **standard_user / secret_sauce**
-- User is on the [**Inventory Page**](https://www.saucedemo.com/inventory.html)
+- User is **logged in** with a `standard_user` or `problem_user` account
+- User is on the [Inventory Page](https://www.saucedemo.com/inventory.html)
 
-**Test Data**:
+### Test Data
 
-- Name: `Sauce Labs Bike Light` Price: `$9.99` Description:`A red light isn't the desired state in...`
-- Name: `Sauce Labs Backpack` Price: `$29.99` Description: `carry.allTheThings() with the sleek...`
+```
+Item Name: `Sauce Labs Bike Light`
+Item Price: `$9.99`
+Item Description: `A red light isn't the desired state in...`
 
-**Test Steps:**
+Item Name: `Sauce Labs Backpack`
+Item Price: `$29.99`
+Item Description: `carry.allTheThings() with the sleek...`
+```
 
-1.  Locate the item, `Sauce Labs Bike Light` in inventory list
+### Test Steps
 
-    - **Expected Result:** User locates item
-
-2.  Verify the details displayed on `Sauce Labs Bike Light`
-
-    - **Expected Result:**
-      - Displayed description should match `A red light isn't the desired state in...`
-      - Displayed price should match `$9.99`
-
-3.  Locate the item, `Sauce Labs Backpack` in inventory list
-
-    - **Expected Result:** User locates item
-
-4.  Verify the details displayed on `Sauce Labs Backpack`
-
-    - **Expected Result:**
-      - Displayed description should match `carry.allTheThings() with the sleek...`
-      - Displayed price should match `$29.99`
+| Step | Action                                                   | Expected Result                                                                             |
+| ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 1    | Locate `Sauce Labs Bike Light` in inventory list         | Item is visible in the inventory                                                            |
+| 2    | Verify the details displayed for `Sauce Labs Bike Light` | Description matches: `A red light isn't the desired state in...` and Price matches: `$9.99` |
+| 3    | Locate `Sauce Labs Backpack` in inventory list           | Item is visible in the inventory                                                            |
+| 4    | Verify the details displayed for `Sauce Labs Backpack`   | Description matches: `carry.allTheThings() with the sleek...` and Price matches: `$29.99`   |
 
 ## TC-INVENTORY-002: Successfully Sort Products by Name (Z → A)
 
-**Priority:** Medium
+- **Priority:** 🟡 Medium
+- **Test Type** Positive
 
-**Preconditions:**
+### Preconditions
 
-- User is **logged in**
-- User is on the [**Inventory Page**](https://www.saucedemo.com/inventory.html)
+- User is **logged in** with a `standard_user` or `problem_user` account
+- User is on the [Inventory Page](https://www.saucedemo.com/inventory.html)
 
-**Test Data**:
+### Test Data
 
-- Expected First Item: `Test.allTheThings() T-Shirt (Red)`
-- Expected Last Item: `Sauce Labs Backpack`
+```
+Sort Order: `Name (Z → A)`
+```
 
-**Test Steps:**
+### Test Steps
 
-1.  Click the **“Sort”** icon/button
-
-    - **Expected Result:** Dropdown menu opens with 4 options
-
-2.  Select the **Name (Z -> A)** option
-
-    - **Expected Result:** Items are sorted by `Name (Z -> A)`
-
-3.  Verify the name of the first item on the inventory list
-
-    - **Expected Result:** Name of first item matches `Test.allTheThings() T-Shirt (Red)`
-
-4.  Verify the name of the last item on the inventory list
-
-    - **Expected Result:** Name of last item matches `Sauce Labs Backpack`
+| Step | Action                                      | Expected Result                                              |
+| ---- | ------------------------------------------- | ------------------------------------------------------------ |
+| 1    | Click the **Sort** dropdown                 | Dropdown menu opens displaying 4 sorting options             |
+| 2    | Select the **Name (Z → A)** option          | Items are reordered by name in descending alphabetical order |
+| 3    | Verify the first item in the inventory list | First item name matches: `Test.allTheThings() T-Shirt (Red)` |
+| 4    | Verify the last item in the inventory list  | Last item name matches: `Sauce Labs Backpack`                |
 
 ## TC-INVENTORY-003: Item Sort Order Persist After Page Refresh
 
-**Priority:** Medium
+- **Priority:** 🟡 Medium
+- **Test Type** Positive
 
-**Preconditions:**
+### Preconditions
 
-- User is **logged in**
-- User is on the [**Inventory Page**](https://www.saucedemo.com/inventory.html)
+- User is **logged in** with a `standard_user` or `problem_user` account
+- User is on the [Inventory Page](https://www.saucedemo.com/inventory.html)
 - Items are currently sorted by **name (Z -> A)**
 
-**Test Data**:
+### Test Data
 
-- Expected First Item: `Test.allTheThings() T-Shirt (Red)`
-- Expected Last Item: `Sauce Labs Backpack`
+```
+Sort Order: Name (Z → A)
+```
 
-**Test Steps:**
+### Test Steps
 
-1. Refresh the page
-
-   - **Expected Results:** Page refreshes successfully
-
-2. Verify the currently selected sort option in the sorting dropdown
-
-   - **Expected Results:** The sort dropdown still displays `Name (Z -> A)`
-
-3. Verify the name of the first item on the inventory list
-
-   - **Expected Result:** First item's name matches `Test.allTheThings() T-Shirt (Red)`
-
-4. Verify the name of the last item on the inventory list
-
-   - **Expected Result:** Last item's name matches `Sauce Labs Backpack`
+| Step | Action                                          | Expected Result                                              |
+| ---- | ----------------------------------------------- | ------------------------------------------------------------ |
+| 1    | Refresh the page (F5 or browser refresh button) | Page reloads successfully                                    |
+| 2    | Verify the selected sort option in the dropdown | Sort dropdown displays: `Name (Z → A)`                       |
+| 3    | Verify the first item in the inventory list     | First item name matches: `Test.allTheThings() T-Shirt (Red)` |
+| 4    | Verify the last item in the inventory list      | Last item name matches: `Sauce Labs Backpack`                |
 
 ## TC-INVENTORY-004: Add Item to Cart From Inventory Page
 
-**Priority:** High
+- **Priority** 🔴 High
+- **Test Type** Positive
 
-**Preconditions:**
+### Preconditions
 
-- User is **logged in**
-- User is on the [**Inventory Page**](https://www.saucedemo.com/inventory.html)
-- Cart is empty and cart indicator displays **zero**
+- User is **logged in** with a `standard_user` or `problem_user` account
+- User is on the [Inventory Page](https://www.saucedemo.com/inventory.html)
+- Cart is empty (cart indicator displays **0**)
 
-**Test Data**:
+### Test Data
 
-- Item Name: `Sauce Labs Backpack`
+```
+Item Name: Sauce Labs Backpack
+```
 
-**Test Steps:**
+### Test Steps
 
-1. Locate `Sauce Labs Backpack` in inventory list
-
-   - **Expected Results:**
-     - `Sauce Labs Backpack` is located in inventory
-     - `Sauce Labs Backpack` has add to cart button
-
-2. Click the **Add to Cart** button on `Sauce Labs Backpack`
-
-   - **Expected Results:**
-     - Selected item is added to the cart
-     - Cart indicator increases by **one**
-     - `Sauce Labs Backpack` button updates to reflect its new state, **Remove**
-
-3. Click the **Cart Icon** button at the top right corner
-
-   - **Expected Results:** User is navigated to the Cart page
-
-4. Verify `Sauce Labs Backpack` is in the cart
-   `
-   - **Expected Results:** Cart contains only one item, `Sauce Labs Backpack`
+| Step | Action                                                    | Expected Result                                             |
+| ---- | --------------------------------------------------------- | ----------------------------------------------------------- |
+| 1    | Locate `Sauce Labs Backpack` in inventory list            | Item is in inventory and Item has **Add to Cart** button    |
+| 2    | Click the **Add to Cart** button on `Sauce Labs Backpack` | Item is added to cart and button text changes to **Remove** |
+| 3    | Verify **Cart Indicator** amount                          | Cart indicator increases to **1**                           |
+| 4    | Click the **Cart Icon** at the top right corner           | User is navigated to the Cart page                          |
+| 5    | Verify `Sauce Labs Backpack` is in the cart               | Cart contains exactly one item: `Sauce Labs Backpack`       |
 
 ## TC-INVENTORY-005: Remove Item From Cart on Inventory Page
 
-**Priority:** High
+- **Priority** 🔴 High
+- **Test Type** Positive
 
-**Preconditions:**
+### Preconditions
 
-- User is **logged in**
-- User is on the [**Inventory Page**](https://www.saucedemo.com/inventory.html)
-- Cart has one item and cart indicator displays **one**
+- User is **logged in** with a `standard_user` or `problem_user` account
+- User is on the [Inventory Page](https://www.saucedemo.com/inventory.html)
+- Cart contains one item (cart indicator displays **1**)
 
-**Test Data**:
+### Test Data
 
-- Item in Cart: `Sauce Labs Backpack`
+```
+Item in Cart: Sauce Labs Backpack
+```
 
-**Test Steps:**
+### Test Steps
 
-1. Locate `Sauce Labs Backpack` in inventory list
-
-   - **Expected Results:**
-     - `Sauce Labs Backpack` is located in inventory
-     - `Sauce Labs Backpack` has remove button
-
-2. Click the **Remove** button on `Sauce Labs Backpack`
-
-   - **Expected Results:**
-     - `Sauce Labs Backpack` is removed from the cart
-     - Cart indicator decreases by **one**
-     - `Sauce Labs Backpack` button updates to reflect its new state, **Add to Cart**
-
-3. Click the **Cart Icon** button at the top right corner
-
-   - **Expected Results:** User is navigated to the Cart page
-
-4. Verify `Sauce Labs Backpack` is not in the cart
-
-   - **Expected Results:** Cart is empty
+| Step | Action                                               | Expected Result                                                                                         |
+| ---- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1    | Locate `Sauce Labs Backpack` in inventory list       | Item is in inventory and item has **Remove** button                                                     |
+| 2    | Click the **Remove** button on `Sauce Labs Backpack` | Item is removed from cart, cart indicator decreases to **0** and button text changes to **Add to Cart** |
+| 3    | Click the **Cart Icon** at the top right corner      | User is navigated to the Cart page                                                                      |
+| 4    | Verify `Sauce Labs Backpack` is not in the cart      | Cart is empty with no items displayed                                                                   |
