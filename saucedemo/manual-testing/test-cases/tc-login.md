@@ -17,8 +17,10 @@
 
 ## TC-LOGIN-001: Successful Login With Valid Credentials
 
-- **Priority:** 🔴 High
-- **Test Type:** Positive
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Positive |
 
 ### Preconditions
 
@@ -27,22 +29,24 @@
 ### Test Data
 
 ```
-Username: `standard_user` or `problem_user`
+Username: `standard_user`
 Password: `secret_sauce`
 ```
 
 ### Test Steps
 
-| Step | Action                                                              | Expected Result                                                                  |
-| ---- | ------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| 1    | Enter `standard_user` or `problem_user` into the **Username** field | **Username** field displays the entered text correctly with no errors            |
-| 2    | Enter `secret_sauce` into the **Password** field                    | **Password** field displays the entered text correctly with no errors (masked)   |
-| 3    | Click the **Login** button                                          | User is navigated to the `Inventory Page` and complete product list is displayed |
+| Step | Action                                            | Expected Result                                                                |
+| ---- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1    | Enter `standard_user` into the **Username** field | **Username** field displays the entered text correctly with no errors          |
+| 2    | Enter `secret_sauce` into the **Password** field  | **Password** field displays the entered text correctly with no errors (masked) |
+| 3    | Click the **Login** button                        | User is navigated to the `Inventory Page` and full product list is displayed   |
 
 ## TC-LOGIN-002: Unsuccessful Login With Invalid Credentials
 
-- **Priority:** 🔴 High
-- **Test Type:** Negative
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Negative |
 
 ### Preconditions
 
@@ -65,8 +69,10 @@ Password: `secret_sauce`
 
 ## TC-LOGIN-003: Login Fails With Empty Username Field
 
-- **Priority:** 🟡 Medium
-- **Test Type:** Negative
+| Attribute | Value     |
+| --------- | --------- |
+| Priority  | 🟡 Medium |
+| Test Type | Negative  |
 
 ### Preconditions
 
@@ -83,14 +89,16 @@ Password: `secret_sauce`
 
 | Step | Action                                           | Expected Result                                                                |
 | ---- | ------------------------------------------------ | ------------------------------------------------------------------------------ |
-| 1    | Leave **Username** field empty                   | **Username** field remains empty                                               |
+| 1    | Leave **Username** field empty                   | **Username** field is empty                                                    |
 | 2    | Enter `secret_sauce` into the **Password** field | **Password** field displays the entered text correctly with no errors (masked) |
 | 3    | Click the **Login** button                       | Error message displayed: `Epic sadface: Username is required`                  |
 
 ## TC-LOGIN-004: Login Fails With Empty Password Field
 
-- **Priority:** 🟡 Medium
-- **Test Type:** Negative
+| Attribute | Value     |
+| --------- | --------- |
+| Priority  | 🟡 Medium |
+| Test Type | Negative  |
 
 ### Preconditions
 
@@ -108,13 +116,15 @@ Password: [Leave Empty]
 | Step | Action                                            | Expected Result                                                       |
 | ---- | ------------------------------------------------- | --------------------------------------------------------------------- |
 | 1    | Enter `standard_user` into the **Username** field | **Username** field displays the entered text correctly with no errors |
-| 2    | Leave **Password** field empty                    | **Password** field remains empty                                      |
+| 2    | Leave **Password** field empty                    | **Password** field is empty                                           |
 | 3    | Click the **Login** button                        | Error message displayed: `Epic sadface: Password is required`         |
 
-## TC-LOGIN-005:Login Successfully Handles Trailing Whitespace
+## TC-LOGIN-005: Login Successfully Handles Trailing Whitespace
 
-- **Priority:** 🔴 High
-- **Test Type:** Positive
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Positive |
 
 ### Preconditions
 
@@ -129,8 +139,8 @@ Password: `secret_sauce`
 
 ### Test Steps
 
-| Step | Action                                                                 | Expected Result                                                                                           |
-| ---- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| 1    | Enter `standard_user ` with trailing space into the **Username** field | **Username** field displays the entered text correctly with trailing whitespace automatically **trimmed** |
-| 2    | Enter `secret_sauce` into the **Password** field                       | **Password** field displays the entered text correctly with no errors (masked)                            |
-| 3    | Click the **Login** button                                             | User is navigated to the `Inventory Page` and complete product list is displayed                          |
+| Step | Action                                                                   | Expected Result                                                                             |
+| ---- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| 1    | Enter `standard_user ` (with trailing space) into the **Username** field | **Username** field displays the entered text correctly with trailing whitespace **trimmed** |
+| 2    | Enter `secret_sauce` into the **Password** field                         | **Password** field displays the entered text correctly with no errors (masked)              |
+| 3    | Click the **Login** button                                               | User is navigated to the `Inventory Page` and full product list is displayed                |
