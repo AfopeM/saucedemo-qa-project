@@ -12,7 +12,7 @@
 | **Priority**         | P2                  |
 | **Affected Feature** | User Authentication |
 | **Bug Type**         | Input Validation    |
-| **Traceability**     | TC-LOGIN-005        |
+| **Tracability**      | TC-LOGIN-005        |
 
 ## Environment Details
 
