@@ -2,17 +2,17 @@
 
 ## Bug Metadata
 
-| Field                | Value                |
-| -------------------- | -------------------- |
-| **Status**           | 🔴 Open              |
-| **Reported By**      | Afope                |
-| **Date Created**     | 2025-12-14           |
-| **Last Updated**     | 2025-12-14           |
-| **Severity**         | 🟡 Medium            |
-| **Priority**         | P2                   |
-| **Affected Feature** | Inventory Management |
-| **Bug Type**         | Data Mapping         |
-| **Tracability**      | TC-INVENTORY-001     |
+| Field                | Value             |
+| -------------------- | ----------------- |
+| **Status**           | 🔴 Open           |
+| **Reported By**      | Afope             |
+| **Date Created**     | 2025-12-14        |
+| **Last Updated**     | 2025-12-14        |
+| **Severity**         | 🟡 Medium         |
+| **Priority**         | P2                |
+| **Affected Feature** | Inventory listing |
+| **Bug Type**         | Data Mapping      |
+| **Traceability**     | TC-INVENTORY-001  |
 
 ## Environment Details
 

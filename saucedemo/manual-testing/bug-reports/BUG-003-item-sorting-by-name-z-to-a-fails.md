@@ -12,7 +12,7 @@
 | **Priority**         | P3               |
 | **Affected Feature** | Product Sorting  |
 | **Bug Type**         | Functional       |
-| **Tracability**      | TC-INVENTORY-002 |
+| **Traceability**     | TC-INVENTORY-002 |
 
 ## Environment Details
 
