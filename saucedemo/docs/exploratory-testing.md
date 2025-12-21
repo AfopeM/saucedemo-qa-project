@@ -1,11 +1,10 @@
-# 🧪 Exploratory Testing Document
+# Exploratory Testing Document
 
-**Application:** [Saucedemo](https://www.saucedemo.com/)  
-**Focus:** `standard_user` and `problem_user`
-
-## 📌 Summary
+## Summary
 
 This document captures exploratory testing observations for the Saucedemo application, focusing on the Login, Inventory, Cart, Checkout features across `standard_user` and `problem_user` accounts.
+
+**Application:** [Saucedemo](https://www.saucedemo.com/)
 
 ## 📋 Table of Contents
 
