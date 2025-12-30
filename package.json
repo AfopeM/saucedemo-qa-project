@@ -1,0 +1,23 @@
+{
+  "name": "saucedemo-qa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:login": "playwright test login.spec.ts --workers=1",
+    "test:inventory": "playwright test inventory.spec.ts --workers=1",
+    "test:cart": "playwright test cart.spec.ts --workers=1",
+    "test:checkout": "playwright test checkout.spec.ts --workers=1",
+    "test:smoke": "playwright test --workers=1 --grep @smoke",
+    "test:regression": "playwright test --workers=1 --grep @regression",
+    "test:critical": "playwright test --workers=1 --grep @critical",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}
