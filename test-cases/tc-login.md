@@ -1,9 +1,9 @@
 # Login Test Cases - Sauce Demo
 
-🔑 **Feature:** User Authentication  
-📅 **Created:** 2025-12-12  
-✏️ **Updated:** 2025-12-15  
-👤 **Author:** Afope
+- 📦 **Feature:** User Authentication
+- 📅 **Created:** 2025-12-12
+- ✏️ **Updated:** 2025-12-15
+- 👤 **Author:** Afope
 
 ## Test Case Summary
 
@@ -11,9 +11,9 @@
 | ------------ | ---------------------------------------------- | --------- |
 | TC-LOGIN-001 | Successful Login With Valid Credentials        | 🔴 High   |
 | TC-LOGIN-002 | Unsuccessful Login With Invalid Credentials    | 🔴 High   |
-| TC-LOGIN-003 | Login Fails With Empty Username Field          | 🟡 Medium |
-| TC-LOGIN-004 | Login Fails With Empty Password Field          | 🟡 Medium |
-| TC-LOGIN-005 | Login Successfully Handles Trailing Whitespace | 🔴 High   |
+| TC-LOGIN-003 | Login Fails With Empty Username Field          | 🔴 High   |
+| TC-LOGIN-004 | Login Fails With Empty Password Field          | 🔴 High   |
+| TC-LOGIN-005 | Login Successfully Handles Trailing Whitespace | 🟡 Medium |
 
 ---
 
@@ -75,10 +75,10 @@ Password: `secret_sauce`
 
 ## TC-LOGIN-003: Login Fails With Empty Username Field
 
-| Attribute | Value     |
-| --------- | --------- |
-| Priority  | 🟡 Medium |
-| Test Type | Negative  |
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Negative |
 
 ### Preconditions
 
@@ -103,10 +103,10 @@ Password: `secret_sauce`
 
 ## TC-LOGIN-004: Login Fails With Empty Password Field
 
-| Attribute | Value     |
-| --------- | --------- |
-| Priority  | 🟡 Medium |
-| Test Type | Negative  |
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Negative |
 
 ### Preconditions
 
@@ -131,10 +131,10 @@ Password: [Leave Empty]
 
 ## TC-LOGIN-005: Login Successfully Handles Trailing Whitespace
 
-| Attribute | Value    |
-| --------- | -------- |
-| Priority  | 🔴 High  |
-| Test Type | Positive |
+| Attribute | Value     |
+| --------- | --------- |
+| Priority  | 🟡 Medium |
+| Test Type | Positive  |
 
 ### Preconditions
 

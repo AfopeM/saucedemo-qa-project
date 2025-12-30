@@ -1,9 +1,9 @@
 # Inventory Test Cases - Sauce Demo
 
-📦 **Feature:** Inventory Exploration  
-📅 **Created:** 2025-12-13  
-✏️ **Updated:** 2025-12-15  
-👤 **Author:** Afope
+- 📦 **Feature:** Inventory Exploration
+- 📅 **Created:** 2025-12-13
+- ✏️ **Updated:** 2025-12-15
+- 👤 **Author:** Afope
 
 ## 📋 Test Case Summary
 
@@ -11,7 +11,7 @@
 | ---------------- | ------------------------------------------- | --------- |
 | TC-INVENTORY-001 | Inventory Items Display Correct Details     | 🔴 High   |
 | TC-INVENTORY-002 | Successfully Sort Products by Name (Z → A)  | 🟡 Medium |
-| TC-INVENTORY-003 | Item Sort Order Persists After Page Refresh | 🟡 Medium |
+| TC-INVENTORY-003 | Item Sort Order Persists After Page Refresh | 🟢 Low    |
 | TC-INVENTORY-004 | Add Item to Cart From Inventory Page        | 🔴 High   |
 | TC-INVENTORY-005 | Remove Item From Cart on Inventory Page     | 🔴 High   |
 
@@ -32,27 +32,39 @@
 ### Test Data
 
 ```
-Item Name: `Sauce Labs Bike Light`
-Item Image: `Bike Light`
-Item Price: `$9.99`
-Item Description: `A red light isn't the desired state in...`
-
 Item Name: `Sauce Labs Backpack`
-Item Image: `Backpack`
+Item Image: `Sauce Labs Backpack`
 Item Price: `$29.99`
 Item Description: `carry.allTheThings() with the sleek...`
+
+Item Name: `Sauce Labs Fleece Jacket`
+Item Image: `Sauce Labs Fleece Jacket`
+Item Price: `$49.99`
+Item Description: `It's not every day that you come across...`
+
+
+Item Name: `Test.allTheThings() T-Shirt (Red)`
+Item Image: `Test.allTheThings() T-Shirt (Red)`
+Item Price: `$15.99`
+Item Description: `This classic Sauce Labs t-shirt is perfect...`
 ```
 
 ### Test Steps
 
-| Step | Action                                                       | Expected Result                                                                             |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| 1    | Locate `Sauce Labs Bike Light` in inventory list             | Item is visible in the inventory                                                            |
-| 2    | Verify the **Details** displayed for `Sauce Labs Bike Light` | Description matches: `A red light isn't the desired state in...` and Price matches: `$9.99` |
-| 3    | Verify the **Image** displayed for `Sauce Labs Bike Light`   | Image matches: `Bike Light`                                                                 |
-| 4    | Locate `Sauce Labs Backpack` in inventory list               | Item is visible in the inventory                                                            |
-| 5    | Verify the **Image** displayed for `Sauce Labs Backpack`     | Image matches: `Backpack`                                                                   |
-| 6    | Verify the **Details** displayed for `Sauce Labs Backpack`   | Description matches: `carry.allTheThings() with the sleek...` and Price matches: `$29.99`   |
+| Step | Action                                                                       | Expected Result                                                      |
+| ---- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 1    | Locate `Sauce Labs Backpack`, first item in inventory list                   | Item is visible in the inventory                                     |
+| 2    | Verify the **Description** displayed for `Sauce Labs Backpack`               | Description matches: `carry.allTheThings() with the sleek...`        |
+| 3    | Verify the **Price** displayed for `Sauce Labs Backpack`                     | Price matches: `$29.99`                                              |
+| 4    | Verify the **Image** displayed for `Sauce Labs Backpack`                     | Image matches: `Sauce Labs Backpack`                                 |
+| 5    | Locate `Sauce Labs Fleece Jacket`, most expensive item in inventory list     | Item is visible in the inventory                                     |
+| 6    | Verify the **Description** displayed for `Sauce Labs Fleece Jacket`          | Description matches: `It's not every day that you come across...`    |
+| 7    | Verify the **Price** displayed for `Sauce Labs Fleece Jacket`                | Price matches: `$49.99`                                              |
+| 8    | Verify the **Image** displayed for `Sauce Labs Fleece Jacket`                | Image matches: `Sauce Labs Fleece Jacket`                            |
+| 9    | Locate `Test.allTheThings() T-Shirt (Red)`, last item in inventory list      | Item is visible in the inventory                                     |
+| 10   | Verify the **Description** displayed for `Test.allTheThings() T-Shirt (Red)` | Description matches: `This classic Sauce Labs t-shirt is perfect...` |
+| 11   | Verify the **Price** displayed for `Test.allTheThings() T-Shirt (Red)`       | Price matches: `$15.99`                                              |
+| 12   | Verify the **Image** displayed for `Test.allTheThings() T-Shirt (Red)`       | Image matches: `Test.allTheThings() T-Shirt (Red)`                   |
 
 ---
 
@@ -87,10 +99,10 @@ Sort Order: `Name (Z → A)`
 
 ## TC-INVENTORY-003: Item Sort Order Persist After Page Refresh
 
-| Attribute | Value     |
-| --------- | --------- |
-| Priority  | 🟡 Medium |
-| Test Type | Positive  |
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🟢 Low   |
+| Test Type | Positive |
 
 ### Preconditions
 

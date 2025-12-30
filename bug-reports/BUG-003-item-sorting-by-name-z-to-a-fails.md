@@ -8,7 +8,7 @@
 | **Reported By**      | Afope            |
 | **Date Created**     | 2025-12-14       |
 | **Last Updated**     | 2025-12-14       |
-| **Severity**         | 🟢 Low           |
+| **Severity**         | 🟡 Medium        |
 | **Priority**         | P3               |
 | **Affected Feature** | Product Sorting  |
 | **Bug Type**         | Functional       |

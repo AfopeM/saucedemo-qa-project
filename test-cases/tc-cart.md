@@ -1,9 +1,9 @@
 # Cart Test Cases - Sauce Demo
 
-🛒 **Feature:** Cart Management  
-📅 **Created:** 2025-12-13  
-✏️ **Updated:** 2025-12-15  
-👤 **Author:** Afope
+- 📦 **Feature:** Cart Management
+- 📅 **Created:** 2025-12-13
+- ✏️ **Updated:** 2025-12-15
+- 👤 **Author:** Afope
 
 ## Test Case Summary
 

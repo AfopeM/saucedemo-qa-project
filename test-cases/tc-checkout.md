@@ -1,24 +1,24 @@
 # Checkout Test Cases - Sauce Demo
 
-💳 **Feature:** Checkout Functionality  
-📅 **Created:** 2025-12-13  
-✏️ **Updated:** 2025-12-15  
-👤 **Author:** Afope
+- 📦 **Feature:** Checkout Functionality
+- 📅 **Created:** 2025-12-13
+- ✏️ **Updated:** 2025-12-15
+- 👤 **Author:** Afope
 
 ## Test Case Summary
 
-| Test ID         | Test Case Name                                            | Priority  |
-| --------------- | --------------------------------------------------------- | --------- |
-| TC-CHECKOUT-001 | Incomplete Checkout Step One Form Blocks Checkout Process | 🔴 High   |
-| TC-CHECKOUT-002 | Checkout Step One Form Rejects Invalid Data               | 🟡 Medium |
-| TC-CHECKOUT-003 | Checkout Step One Form Retains User Data                  | 🔴 High   |
-| TC-CHECKOUT-004 | Checkout Step Two Displays Correct Item in Cart           | 🔴 High   |
-| TC-CHECKOUT-005 | Price Calculation Accuracy on Checkout Step Two           | 🔴 High   |
-| TC-CHECKOUT-006 | Successfully Complete Checkout Process                    | 🔴 High   |
+| Test ID         | Test Case Name                                   | Priority |
+| --------------- | ------------------------------------------------ | -------- |
+| TC-CHECKOUT-001 | Checkout Step One Blocks Incomplete Submission   | 🔴 High  |
+| TC-CHECKOUT-002 | Checkout Step One Rejects Invalid Data           | 🔴 High  |
+| TC-CHECKOUT-003 | Checkout Step One Accepts Valid User Information | 🔴 High  |
+| TC-CHECKOUT-004 | Checkout Step Two Displays Correct Item in Cart  | 🔴 High  |
+| TC-CHECKOUT-005 | Price Calculation Accuracy on Checkout Step Two  | 🔴 High  |
+| TC-CHECKOUT-006 | Successfully Complete Checkout Process           | 🔴 High  |
 
 ---
 
-## TC-CHECKOUT-001: Incomplete Checkout Step One Form Blocks Checkout Process
+## TC-CHECKOUT-001: Checkout Step One Blocks Incomplete Submission
 
 | Attribute | Value    |
 | --------- | -------- |
@@ -49,12 +49,12 @@ Zip/Postal Code: [Leave Empty]
 
 ---
 
-## TC-CHECKOUT-002: Checkout Step One Form Rejects Invalid Data
+## TC-CHECKOUT-002: Checkout Step One Rejects Invalid Data
 
-| Attribute | Value     |
-| --------- | --------- |
-| Priority  | 🟡 Medium |
-| Test Type | Negative  |
+| Attribute | Value    |
+| --------- | -------- |
+| Priority  | 🔴 High  |
+| Test Type | Negative |
 
 ### Preconditions
 
@@ -80,7 +80,7 @@ Zip/Postal Code: `M5A M5V`
 
 ---
 
-## TC-CHECKOUT-003: Checkout Step One Form Retains User Data
+## TC-CHECKOUT-003: Checkout Step One Accepts Valid User Information
 
 | Attribute | Value    |
 | --------- | -------- |

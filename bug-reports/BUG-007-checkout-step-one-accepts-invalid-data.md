@@ -8,7 +8,7 @@
 | **Reported By**      | Afope             |
 | **Date Created**     | 2025-12-14        |
 | **Last Updated**     | 2025-12-14        |
-| **Severity**         | 🟡 Medium         |
+| **Severity**         | 🔴 High           |
 | **Priority**         | P2                |
 | **Affected Feature** | Checkout Step One |
 | **Bug Type**         | Input Validation  |
