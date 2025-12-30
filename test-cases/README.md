@@ -1,14 +1,17 @@
 # Test Summary Report - Saucedemo
 
+- 📅 **Created:** 2025-12-14
+- ✏️ **Updated:** 2025-12-16
+- 👤 **Tester:** Afope
+
+---
+
 ## Report Metadata
 
-| Item            | Value                       |
-| --------------- | --------------------------- |
-| **Project**     | SauceDemo                   |
-| **Test Cycle**  | Cycle 1 – Initial Execution |
-| **Test Period** | 2025-12-14 → 2025-12-16     |
-| **Prepared By** | Afope                       |
-| **Report Date** | 2025-12-16                  |
+| Item           | Value                       |
+| -------------- | --------------------------- |
+| **Project**    | SauceDemo                   |
+| **Test Cycle** | Cycle 1 – Initial Execution |
 
 ## 📋 Table of Contents
 
@@ -160,7 +163,7 @@ The application **does not meet release criteria** for this cycle due to:
 
 ## 9. Appendices
 
-- **A. Test Execution Log** – [test-execution-log.md](test-execution-log.md)
-- **B. Test Cases** – [Test Cases Folder](./test-cases/)
-- **C. Defect Summary Report** – [bug-summary-report.md](./bug-reports/bug-summary-report.md)
-- **D. Individual Bug Evidence** – [BUG Reports Folder](./bug-reports/)
+- **A. Test Execution Log** – [test-execution-log.md](/docs/test-execution-log.md)
+- **B. Test Cases** – [Test Cases Folder](/test-cases/)
+- **C. Defect Summary Report** – [README.md](/bug-reports/README.md)
+- **D. Individual Bug Evidence** – [BUG Evidence Folder](/evidence/)
