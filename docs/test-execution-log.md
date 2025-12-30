@@ -1,14 +1,17 @@
 # Test Execution Log - SauceDemo
 
+- 📅 **Created:** 2025-12-14
+- ✏️ **Updated:** 2025-12-14
+- 👤 **Tester:** Afope
+
+---
+
 ## Test Cycle Information
 
 | Item            | Value                       |
 | --------------- | --------------------------- |
 | **Environment** | https://www.saucedemo.com/  |
 | **Test Cycle**  | Cycle 1 – Initial Execution |
-| **Tester**      | Afope                       |
-| **Start Date**  | 2025-12-14                  |
-| **End Date**    | 2025-12-14                  |
 | **Browser**     | Brave 1.85.111              |
 
 ---
@@ -29,7 +32,7 @@
 ### Execution Insights
 
 - Execution was performed using the **problem_user** account, which exposes application defects.
-- Majority of failures occurred in **Inventory sorting** and **Checkout Step One**.
+- Majority of failures occurred in **Inventory** and **Checkout Step One**.
 - 3 test cases were blocked due to inability to proceed past **Checkout Step One**.
 - Failures uncovered **8 unique defects**, indicating high defect density in core user flows.
 

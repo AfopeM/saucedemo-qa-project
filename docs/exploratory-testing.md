@@ -4,8 +4,6 @@
 
 This document captures exploratory testing observations for the Saucedemo application, focusing on the Login, Inventory, Cart, Checkout features across `standard_user` and `problem_user` accounts.
 
-**Application:** [Saucedemo](https://www.saucedemo.com/)
-
 ## 📋 Table of Contents
 
 1. [Application Overview](#1-application-overview)
@@ -74,18 +72,6 @@ Login Page (/)
     ├─► Logout → Login Page
     └─► Reset App State
 ```
-
-### 3.1 Navigation Flow Details
-
-| Current Page          | Navigation Options                                                      |
-| --------------------- | ----------------------------------------------------------------------- |
-| **Login Page**        | → Inventory (on success)<br>→ Error Message (on failure)                |
-| **Inventory Page**    | → Dedicated Item<br>→ Cart Page                                         |
-| **Dedicated Item**    | → Inventory<br>→ Cart Page                                              |
-| **Cart Page**         | → Inventory<br>→ Checkout Step One                                      |
-| **Checkout Step One** | → Cart (Cancel)<br>→ Checkout Step Two (Continue)                       |
-| **Checkout Step Two** | → Cart (Cancel)<br>→ Inventory (Cancel)<br>→ Checkout Complete (Finish) |
-| **Checkout Complete** | → Inventory (Back Home)<br>→ Cart Page                                  |
 
 ## 4. Feature Inventory
 
@@ -195,7 +181,7 @@ Login Page (/)
 | **Remove Button Failure** | 🔴 High   | Some items have non-functional Remove buttons            |
 | **Content Errors**        | 🟡 Medium | Incorrect item titles and descriptions                   |
 | **Layout Issues**         | 🟢 Low    | Footer elements not centered                             |
-| **Form Field Bug**        | 🟡 Medium | Last Name field clears unexpectedly on Checkout Step Two |
+| **Form Field Bug**        | 🔴 High   | Last Name field clears unexpectedly on Checkout Step Two |
 
 ### 5.2 Edge Cases Noticed (System Vulnerabilities & Unexpected Behaviors)
 

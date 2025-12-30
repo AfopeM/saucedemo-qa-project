@@ -2,11 +2,12 @@
 
 ## Document Information
 
-- **Project**: Sauce Demo
-- **Version**: 2.0
-- **Date**: 2025-12-14
-- **Author**: Afope
-- **Status**: Final
+- 📦 **Project**: Sauce Demo
+- 🏷️ **Version**: 2.0
+- 📅 **Created:** 2025-12-14
+- ✏️ **Updated:** 2025-12-24
+- 👤 **Tester:** Afope
+- ✅ **Status**: Final
 
 ## 📋 Table of Contents
 
@@ -57,10 +58,10 @@ The following items are excluded as they do not directly impact the core purchas
 
 The objectives of this test cycle are to:
 
-- [ ] Verify basic **desktop and mobile responsiveness**
-- [x] Execute at least **90% of planned test cases**
-- [x] Identify and report all **high-risk and high-impact defects**
-- [ ] Ensure no critical defects block the primary user journey
+- Verify basic **desktop and mobile responsiveness**
+- Execute at least **90% of planned test cases**
+- Identify and report all **high-risk and high-impact defects**
+- Ensure no critical defects block the primary user journey
 
 ---
 
@@ -93,21 +94,28 @@ Test cases are designed using **positive and negative scenarios, and equivalence
 
 Testing will begin once:
 
-- [x] A stable test environment is available
-- [x] The latest application build is deployed
-- [x] Approved test cases for critical workflows are ready
-- [x] Valid test credentials are available
-- [x] Defect logging and evidence tools are configured
+- A stable test environment is available
+- The latest application build is deployed
+- Approved test cases for critical workflows are ready
+- Valid test credentials are available
+- Defect logging and evidence tools are configured
 
 ### 6.2 Exit Criteria
 
 Testing will conclude when:
 
-- [x] At least **90% of in-scope test cases** are executed
-- [ ] All **critical and high-severity defects** are resolved
-- [ ] No open defects block the core user purchase workflow
-- [ ] Test results and defect reports are completed
+- At least **90% of in-scope test cases** are executed
+- All **critical and high-severity defects** are resolved
+- No open defects block the core user purchase workflow
+- Test results and defect reports are completed
 
 ---
 
 ## 7. Risks and Mitigation
+
+| Risk                               | Impact    | Mitigation                                                                   |
+| ---------------------------------- | --------- | ---------------------------------------------------------------------------- |
+| Limited browser/device coverage    | 🟡 Medium | Focus on core workflows and document coverage limitations                    |
+| Demo application limitations       | 🟡 Medium | Validate against expected demo behavior and clearly label known demo defects |
+| Late discovery of critical defects | 🔴 High   | Prioritize end-to-end and high-risk scenarios first                          |
+| Manual testing coverage gaps       | 🟡 Medium | Use exploratory testing and identify candidates for future automation        |
