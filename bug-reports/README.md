@@ -32,11 +32,12 @@ This report summarizes all the defects identified during **functional and explor
 
 | Metric               | Value |
 | -------------------- | ----- |
-| Total Defects Logged | 12    |
-| High                 | 3     |
-| Medium               | 3     |
-| Low                  | 2     |
+| Total Defects Logged | 11    |
+| High                 | 5     |
+| Medium               | 2     |
+| Low                  | 1     |
 | Open                 | 8     |
+| Blocked              | 3     |
 | Fixed                | 0     |
 
 ---
@@ -45,9 +46,9 @@ This report summarizes all the defects identified during **functional and explor
 
 | Severity | Count | % of Total |
 | -------- | ----- | ---------- |
-| High     | 3     | 37.5%      |
-| Medium   | 3     | 37.5%      |
-| Low      | 2     | 25.0%      |
+| High     | 5     | 62.5%      |
+| Medium   | 2     | 25.0%      |
+| Low      | 1     | 12.5%      |
 
 ---
 
@@ -66,9 +67,9 @@ This report summarizes all the defects identified during **functional and explor
 
 | Bug ID  | Severity | Module   | Status | Impact Summary                    |
 | ------- | -------- | -------- | ------ | --------------------------------- |
-| BUG-006 | High     | Cart     | Open   | User can checkout with Empty cart |
-| BUG-007 | High     | Checkout | Open   | Wrong data type submit            |
-| BUG-008 | High     | Checkout | Open   | Prevents order completion         |
+| BUG-006 | 🔴 High  | Cart     | Open   | User can checkout with Empty cart |
+| BUG-007 | 🔴 High  | Checkout | Open   | Wrong data type submit            |
+| BUG-008 | 🔴 High  | Checkout | Open   | Prevents order completion         |
 
 ---
 
@@ -92,6 +93,6 @@ Due to the high risk in core user workflow I beleive saucedemo application is no
 
 ## 7. Appendices
 
-- **A. Test Summary Report** – [bug-summary-report.md](./bug-reports/test-summary-report.md)
-- **B. Test Execution Log** – [test-execution-log.md](test-execution-log.md)
-- **C. Individual Bug Evidence** – [BUG Reports Folder](./bug-reports/)
+- **A. Test Summary Report** – [README.md](/test-cases/README.md)
+- **B. Test Execution Log** – [test-execution-log.md](/docs/test-execution-log.md)
+- **C. Individual Bug Evidence** – [BUG Evidence Folder](/evidence/)
