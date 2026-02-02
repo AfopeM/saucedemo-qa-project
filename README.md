@@ -1,12 +1,14 @@
 # SAUCEDEMO - QA PROJECT
 
-## Overview
+## Business Context
 
-In this project I focused on building manual and automation testing fundamentals: exploratory testing, test case design, bug reporting, and test planning.
+The current testing cycle for Saucedemo has identified critical failures in the cart and checkout workflows that directly compromise the business’s primary revenue stream. Currently, **40% of all documented defects** are concentrated in the checkout feature, with 100% of these rated as **High Severity**. Resolving these issues represents the **highest ROI** for the business as they restore the "Critical Purchase Path," directly enabling revenue generation that is currently at a total standstill for affected users.
 
-**Duration**: 2025/12/13 - 2025/12/24
-**Time Invested**: ~30 hours across 10 days
-**Application Tested**: [Sauce Demo](https://www.saucedemo.com/)
+### Key Business Risks:
+- A broken checkout input field creates a block on all transactions, reducing the site's conversion rate to 0% for impacted sessions.
+- Accepting invalid data types in checkout leads to shipping failures and costly manual database corrections.
+- Non-functional "Remove" buttons and incorrect product details lead to high Cart Abandonment and increased Chargeback rates.
+These friction points jeopardize roughly 50% of revenue typically driven by repeat customers. In e-commerce, a single failed checkout experience often results in permanent churn.
 
 ---
 
@@ -130,6 +132,6 @@ Before you begin, ensure you have the following installed on your machine:
 If you are working with an existing project, clone it first:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/AfopeM/saucedemo-qa-project.git
 cd saucedemo-qa-project
 ```
