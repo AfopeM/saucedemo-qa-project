@@ -2,13 +2,13 @@
 
 ## Business Context
 
-The current testing cycle for Saucedemo has identified critical failures in the cart and checkout workflows that directly compromise the business’s primary revenue stream. Currently, **40% of all documented defects** are concentrated in the checkout feature, with 100% of these rated as **High Severity**. Resolving these issues represents the **highest ROI** for the business as they restore the "Critical Purchase Path," directly enabling revenue generation that is currently at a total standstill for affected users.
+The current testing cycle for Saucedemo has identified critical failures in the cart and checkout workflows that directly compromise the business’s **primary revenue stream**. Currently, **40% of all documented defects** are concentrated in the checkout feature, with 100% of these rated as **High Severity**. Resolving these issues represents the **highest ROI** for the business as they restore the **"Critical Purchase Path,"** directly enabling revenue generation that is currently at a total standstill for affected users.
 
 ### Key Business Risks:
-- A broken checkout input field creates a block on all transactions, reducing the site's conversion rate to 0% for impacted sessions.
-- Accepting invalid data types in checkout leads to shipping failures and costly manual database corrections.
-- Non-functional "Remove" buttons and incorrect product details lead to high Cart Abandonment and increased Chargeback rates.
-These friction points jeopardize roughly 50% of revenue typically driven by repeat customers. In e-commerce, a single failed checkout experience often results in permanent churn.
+- A broken checkout input field creates a **block on all transactions**, reducing the site's **conversion rate to 0%** for impacted sessions.
+- Accepting invalid data types in checkout leads to **shipping failures** and **costly manual database corrections**.
+- Non-functional "Remove" buttons and incorrect product details lead to high Cart Abandonment and **increased Chargeback rates**.
+These friction points jeopardize the revenue contribution of repeat customers, who typically drive around **[40–50% of sales]**(https://www.opensend.com/post/repeat-purchase-rate-ecommerce) for many e‑commerce brands. In e-commerce, a single failed checkout experience often results in **permanent churn**.
 
 ---
 
